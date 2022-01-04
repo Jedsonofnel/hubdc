@@ -1,0 +1,34 @@
+@use './vars' as v;
+
+h2 {
+    font-family: v.$serif;
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: v.$white;
+    text-decoration: underline;
+    text-decoration-thickness: 0.2rem;
+    text-decoration-color: v.$turquoise;
+    text-align: center;
+
+    background-color: v.$darkblue;
+    border-radius: 0.5rem;
+    width: auto;
+
+    padding: 0.25rem 1rem 1rem 1rem;
+    margin: 2rem;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bubble {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: v.$silver;
+    margin-bottom: 1rem;
+}

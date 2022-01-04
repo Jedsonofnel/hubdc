@@ -19,7 +19,7 @@
 </div>
 
 <style lang="scss">
-  @import './styles/vars.scss';
+  @import '../styles/vars.scss';
 
   div {
     margin: 0;
