@@ -1,22 +1,27 @@
 <script>
     import { createEventDispatcher } from 'svelte';
     const dispatch = createEventDispatcher();
-    let what = "test";
-    let loc = "test";
-    let when = "test";
+    export let what = "";
+    export let loc = "";
+    export let when = "";
+    let errors = [];
 
     function validate() {
-        // if valid
-        // TODO test if any are empty and throw error if that is the case
+        errors = []
+        if (what == "") { errors.push("'What' cannot be empty") }
+        if (loc == "") { errors.push("'Location' cannot be empty") }
+        if (when == "") { errors.push("'When' cannot be empty") }
+
         dispatch('submit', {
             what,
             loc,
             when,
+            errors,
         });
     }
 </script>
 
-<form on:submit|preventDefault={validate}>
+<form autocomplete="off" on:submit|preventDefault={validate}>
   <fieldset>
     <label for="what">What</label>
     <input type="text" name="what" placeholder="What" bind:value={what}>

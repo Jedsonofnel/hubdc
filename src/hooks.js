@@ -6,7 +6,6 @@ export const handle = async ({ request, resolve }) => {
 
     if (cookies.Access_token) {
         request.locals.token = cookies.Access_token;
-        request.locals.authed = true;
         return resolve(request);
     }
 
@@ -15,7 +14,7 @@ export const handle = async ({ request, resolve }) => {
 }
 
 export const getSession = (req) => {
-    return req?.locals?.authed
+    return req?.locals?.token
     ? {
         authed: true,
     }

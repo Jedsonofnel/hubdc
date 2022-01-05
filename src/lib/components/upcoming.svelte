@@ -4,10 +4,11 @@
             const res = await fetch("http://www.api.hubdc.info/events/upcoming");
             if (!res.ok) {
                 throw await res.text();
+            } else {
+                return await res.json();
             }
-            return await res.json();
-        } catch(err) {
-            throw err;
+        } catch(error) {
+            throw error;
         }
     };
 

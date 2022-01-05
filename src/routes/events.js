@@ -1,6 +1,32 @@
-export const post = async (req, { body: { what, loc, when } }) => {
-    return {
-        status: 200,
-        body: req.locals.token,
-    };
+export const post = async ({ locals, body: { what, loc, when } }) => {
+    if (!locals.token) {
+        return {
+            status: 302,
+            headers : { location: '/login' },
+        };
+    }
+
+    const res = await fetch('http://www.api.hubdc.info/events', {
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+            'Authorization': locals.token,
+        },
+        body: JSON.stringify({ what, loc, when })
+    });
+
+    if (!res.ok) {
+        return {
+            status: res.status,
+            body: await res.text(),
+        };
+    } else {
+        return {
+            status: res.status,
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: await res.json()
+        };
+    }
 }
