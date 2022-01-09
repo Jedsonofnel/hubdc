@@ -1,7 +1,7 @@
 <script>
     const indexUpcomingEvents = async () => {
         try {
-            const res = await fetch("http://www.api.hubdc.info/events/upcoming");
+            const res = await fetch("https://www.api.hubdc.info/events/upcoming");
             if (!res.ok) {
                 throw await res.json();
             } else {

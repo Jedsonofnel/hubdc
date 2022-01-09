@@ -1,6 +1,6 @@
 export const get = async ({ params }) => {
     const { id } = params;
-    const res = await fetch(`http://www.api.hubdc.info/event/${id}`)
+    const res = await fetch(`https://www.api.hubdc.info/event/${id}`)
 
     if (!res.ok) {
         return {
@@ -20,7 +20,7 @@ export const get = async ({ params }) => {
 
 export const put = async ({ params, locals, body: { what, loc, when } }) => {
     const { id } = params;
-    const res = await fetch(`http://www.api.hubdc.info/event/${id}`, {
+    const res = await fetch(`https://www.api.hubdc.info/event/${id}`, {
         method: 'PUT',
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
@@ -47,7 +47,7 @@ export const put = async ({ params, locals, body: { what, loc, when } }) => {
 
 export const del = async({ params, locals }) => {
     const { id } = params;
-    const res = await fetch(`http://www.api.hubdc.info/event/${id}`, {
+    const res = await fetch(`https://www.api.hubdc.info/event/${id}`, {
         method: 'DELETE',
         headers: {
             'Authorization': locals.token,

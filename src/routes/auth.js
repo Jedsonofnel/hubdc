@@ -5,7 +5,7 @@ export const post = async ({ body: { username, password } }) => {
     let headers = new Headers();
     headers.set('Authorization', 'Basic ' + Buffer.from(`${username}:${password}`).toString('base64'));
 
-    const res =  await fetch('http://www.api.hubdc.info/login', {
+    const res =  await fetch('https://www.api.hubdc.info/login', {
         method: 'POST',
         headers: headers,
     });

@@ -32,7 +32,7 @@
 
     const indexEvents = async () => {
         try {
-            const res = await fetch("http://www.api.hubdc.info/events");
+            const res = await fetch("https://www.api.hubdc.info/events");
 
             if (!res.ok) {
                 throw (await res.json()).errors;
