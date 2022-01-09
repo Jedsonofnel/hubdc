@@ -1,0 +1,93 @@
+{
+  ".svelte-kit/build/app.js": {
+    "file": "app.js",
+    "src": ".svelte-kit/build/app.js",
+    "isEntry": true,
+    "imports": [
+      "_index-f0be1be3.js"
+    ],
+    "css": [
+      "assets/app-6009617f.css"
+    ]
+  },
+  "src/routes/events.js": {
+    "file": "entries/endpoints/events.js",
+    "src": "src/routes/events.js",
+    "isEntry": true
+  },
+  "src/routes/event/[id].js": {
+    "file": "entries/endpoints/event/_id_.js",
+    "src": "src/routes/event/[id].js",
+    "isEntry": true
+  },
+  "src/routes/auth.js": {
+    "file": "entries/endpoints/auth.js",
+    "src": "src/routes/auth.js",
+    "isEntry": true
+  },
+  "src/routes/__layout.svelte": {
+    "file": "entries/pages/__layout.svelte.js",
+    "src": "src/routes/__layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-f0be1be3.js",
+      "_stores-035e89c5.js"
+    ],
+    "css": [
+      "assets/entries/pages/__layout.svelte-7bf7609e.css"
+    ]
+  },
+  ".svelte-kit/build/components/error.svelte": {
+    "file": "entries/pages/error.svelte.js",
+    "src": ".svelte-kit/build/components/error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-f0be1be3.js"
+    ]
+  },
+  "src/routes/index.svelte": {
+    "file": "entries/pages/index.svelte.js",
+    "src": "src/routes/index.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-f0be1be3.js",
+      "_stores-035e89c5.js"
+    ],
+    "css": [
+      "assets/entries/pages/index.svelte-dcdd4892.css"
+    ]
+  },
+  "src/routes/admin.svelte": {
+    "file": "entries/pages/admin.svelte.js",
+    "src": "src/routes/admin.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-f0be1be3.js",
+      "_stores-035e89c5.js"
+    ],
+    "css": [
+      "assets/entries/pages/admin.svelte-e83199a9.css"
+    ]
+  },
+  "src/routes/login.svelte": {
+    "file": "entries/pages/login.svelte.js",
+    "src": "src/routes/login.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-f0be1be3.js",
+      "_stores-035e89c5.js"
+    ],
+    "css": [
+      "assets/entries/pages/login.svelte-8751d8bf.css"
+    ]
+  },
+  "_index-f0be1be3.js": {
+    "file": "chunks/index-f0be1be3.js"
+  },
+  "_stores-035e89c5.js": {
+    "file": "chunks/stores-035e89c5.js",
+    "imports": [
+      "_index-f0be1be3.js"
+    ]
+  }
+}

@@ -9,13 +9,14 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
+    "@sveltejs/adapter-netlify": "^1.0.0-next.38",
     "@sveltejs/kit": "next",
-    "svelte": "^3.44.0",
-    "svelte-preprocess": "^4.9.8"
+    "svelte": "^3.45.0",
+    "svelte-preprocess": "^4.10.1"
   },
   "type": "module",
   "dependencies": {
     "cookie": "^0.4.1",
-    "sass": "^1.43.5"
+    "sass": "^1.47.0"
   }
 }
