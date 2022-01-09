@@ -28,7 +28,7 @@ __export(exports, {
 var import_cookie = __toModule(require("cookie"));
 const post = async ({ body: { username, password } }) => {
   let headers = new Headers();
-  headers.set("Authorization", "Basic " + `${username}:${password}`.toString("base64"));
+  headers.set("Authorization", "Basic " + Buffer.from(`${username}:${password}`).toString("base64"));
   const res = await fetch("http://www.api.hubdc.info/login", {
     method: "POST",
     headers
