@@ -3,7 +3,7 @@ import { serialize } from 'cookie';
 
 export const post = async ({ body: { username, password } }) => {
     let headers = new Headers();
-    headers.set('Authorization', 'Basic ' + btoa(`${username}:${password}`));
+    headers.set('Authorization', 'Basic ' + (`${username}:${password}`).toString('base64'));
 
     const res =  await fetch('http://www.api.hubdc.info/login', {
         method: 'POST',
