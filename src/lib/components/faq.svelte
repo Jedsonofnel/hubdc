@@ -23,7 +23,7 @@
             "No but seriously"
         </h3>
         <p>
-            Despite being mentioned in chapel, the Hub isn't crusty and old fashioned.  We strive to achieve a super chill atmosphere of fun and not taking ourselves too seriously.only through the Hub could I walk around the HPH with my eyes close making cow noises trying to locate similarly impaired noise makers.  It is ridiculously easy to rock up and make yourself at home, so please do so!
+            Despite being mentioned in chapel, the Hub isn't crusty and old fashioned.  We strive to achieve a super chill atmosphere of fun and not taking ourselves too seriously (apart from the God bits that's important).  It is ridiculously easy to rock up and make yourself at home, so please do so!
         </p>
     </div>
 </section>

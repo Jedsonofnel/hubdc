@@ -14,7 +14,7 @@
     p {
         font-family: v.$sans;
         font-size: 1.2rem;
-        color: v.$black;
+        color: grey;
         margin: 0;
     }
 </style>
