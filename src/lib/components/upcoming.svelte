@@ -3,7 +3,7 @@
         try {
             const res = await fetch("http://www.api.hubdc.info/events/upcoming");
             if (!res.ok) {
-                throw await res.text();
+                throw await res.json();
             } else {
                 return await res.json();
             }
@@ -58,11 +58,11 @@
         {/if}
     </section>
 
-{:catch error}
+{:catch errors}
     <section>
         <h2>Upcoming:</h2>
         <div>
-            <h3>{error}</h3>
+            <h3>{errors[0].message}</h3>
         </div>
     </section>
 {/await}
@@ -85,6 +85,7 @@
         display: block;
         width: 40%;
         font-size: 1.25rem;
+        padding-right: 0.5rem;
     }
 
     span {color: grey;}

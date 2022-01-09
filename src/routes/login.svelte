@@ -4,11 +4,10 @@
     import { onMount } from 'svelte';
     import LoginForm from "$lib/components/login_form.svelte";
 
-    let loginErrors = []
+    let loginErrors = [];
 
-    const handleLogin = async ({ detail: { username, password, errors } }) => {
-        loginErrors = errors
-        if (loginErrors.length != 0) { return; }
+    const handleLogin = async ({ detail: { username, password } }) => {
+        loginErrors = [];
         try {
             const res = await fetch('/auth', {
                 method: 'POST',
@@ -20,16 +19,12 @@
             });
 
             if (!res.ok) {
-                loginErrors[loginErrors.length] = await res.text();
-                return;
-            } else {
-                await fetch('/auth', {
-                    credentials: 'include',
-                });
-                goto("/admin");
+                throw (await res.json()).errors;
             }
-        } catch(error) {
-            loginErrors[loginErrors.length + 1] = error
+
+            goto("/admin");
+        } catch(errors) {
+            loginErrors = errors;
         }
     }
 
@@ -48,11 +43,13 @@
 <section>
     <LoginForm on:submit={handleLogin}></LoginForm>
 
-    <div class="login-errors">
-        {#each loginErrors as error}
-            <p class="error">{error}</p>
-        {/each}
-    </div>
+    {#if loginErrors.length != 0}
+        <div class="login-errors">
+            {#each loginErrors as error}
+                <p class="error">{error.message}</p>
+            {/each}
+        </div>
+    {/if}
 </section>
 
 <style lang="scss">
@@ -66,7 +63,7 @@
 
     .login-errors {
         background-color: v.$red;
-        margin-top: 2rem;
+        margin: 1rem 0;
         padding: 0.5rem;
         border-radius: 0.5rem;
         width: auto;

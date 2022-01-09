@@ -15,6 +15,7 @@
     main {
         display: flex;
         max-width: 640px;
+        width: 100%;
         padding: 0 5%;
         margin: 0 auto;
 

@@ -1,7 +1,7 @@
 // proxy route to access jwt from 3rd party auth server
 import { serialize } from 'cookie';
 
-export const post = async ({ locals, body: { username, password } }) => {
+export const post = async ({ body: { username, password } }) => {
     let headers = new Headers();
     headers.set('Authorization', 'Basic ' + btoa(`${username}:${password}`));
 
@@ -34,9 +34,14 @@ export const post = async ({ locals, body: { username, password } }) => {
     };
 }
 
-export const get = () => {
-    // This basic rejigs the hooks so that it registers that a token is present
-    return {
-        status: 200,
-    };
+export const get = ({ locals }) => {
+    if (locals.token) {
+        return {
+            status: 200,
+        };
+    } else {
+        return {
+            status: 401,
+        };
+    }
 }

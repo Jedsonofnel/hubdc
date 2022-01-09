@@ -3,21 +3,16 @@
     const dispatch = createEventDispatcher();
     let username = "";
     let password = "";
-    let errors = [];
 
-    function validate() {
-        errors = []
-        if (password == "") { errors.push("Password cannot be empty") }
-        if (username == "") { errors.push("Username cannot be empty") }
+    function submit() {
         dispatch('submit', {
             username,
             password,
-            errors,
         });
     }
 </script>
 
-<form autocomplete="off" on:submit|preventDefault={validate}>
+<form autocomplete="off" on:submit|preventDefault={submit}>
   <fieldset>
     <label for="username">Username:</label>
     <input type="text" name="username" placeholder="Username" bind:value={username}>
@@ -86,6 +81,7 @@
         &:hover, &:active {
             background-color: v.$turquoise;
             text-decoration: underline;
+            cursor: pointer;
         }
     }
 </style>

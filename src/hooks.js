@@ -12,13 +12,3 @@ export const handle = async ({ request, resolve }) => {
     request.locals.token = null;
     return resolve(request);
 }
-
-export const getSession = (req) => {
-    return req?.locals?.token
-    ? {
-        authed: true,
-    }
-    : {
-        authed: false,
-    };
-}
