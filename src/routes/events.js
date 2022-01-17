@@ -6,7 +6,7 @@ export const post = async ({ locals, body: { what, loc, when } }) => {
         };
     }
 
-    const res = await fetch('https://www.api.hubdc.info/events', {
+    const res = await fetch('https://hubdc-api.herokuapp.com/events', {
         method: 'POST',
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
